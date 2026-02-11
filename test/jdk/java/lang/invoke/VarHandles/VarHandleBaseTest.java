@@ -36,7 +36,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.Assert.*;
 
 abstract class VarHandleBaseTest {
     static final int ITERS = Integer.getInteger("iters", 1);
@@ -136,7 +136,7 @@ abstract class VarHandleBaseTest {
     static void checkWithThrowable(Class<? extends Throwable> re,
                                    Object message,
                                    ThrowingRunnable r) {
-        assertThrows(re, r::run, message == null ? null : message.toString());
+        assertThrows(re, r::run);
     }
 
 
